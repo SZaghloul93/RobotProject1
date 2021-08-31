@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.9.7 on win32)" generated="20210831 13:03:52.393" rpa="false" schemaversion="2">
+<suite id="s1" name="TestSuite1" source="C:\Robot\RobotProject1\test\TestSuite1.robot">
+<test id="s1-t1" name="OpenWebSiteWithInvalidCredentials">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<arg>executable_path=${PATH}</arg>
+<arg>options=add_argument("--incognito")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210831 13:03:52.765" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20210831 13:03:52.765" endtime="20210831 13:03:59.960"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20210831 13:03:59.961" endtime="20210831 13:03:59.963"/>
+</kw>
+<kw name="LoginKW">
+<arg>${INVALIDLOGINDATA}[username]</arg>
+<arg>${INVALIDLOGINDATA}[password]</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=user-name</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210831 13:03:59.964" level="INFO">Typing text 'invalid_user' into text field 'id=user-name'.</msg>
+<status status="PASS" starttime="20210831 13:03:59.964" endtime="20210831 13:04:00.055"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${Password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20210831 13:04:00.055" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg timestamp="20210831 13:04:00.082" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20210831 13:04:00.119" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20210831 13:04:00.055" endtime="20210831 13:04:00.119"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210831 13:04:00.120" level="INFO">Clicking button 'id=login-button'.</msg>
+<status status="PASS" starttime="20210831 13:04:00.120" endtime="20210831 13:04:00.161"/>
+</kw>
+<status status="PASS" starttime="20210831 13:03:59.963" endtime="20210831 13:04:00.162"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210831 13:04:05.163" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210831 13:04:00.162" endtime="20210831 13:04:05.163"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>class=error-button</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210831 13:04:05.187" level="INFO">Element 'class=error-button' is displayed.</msg>
+<status status="PASS" starttime="20210831 13:04:05.164" endtime="20210831 13:04:05.187"/>
+</kw>
+<tag>sanity</tag>
+<status status="PASS" starttime="20210831 13:03:52.764" endtime="20210831 13:04:05.188"/>
+</test>
+<test id="s1-t2" name="OpenWebSiteWithValidCredentials">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open('')</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210831 13:04:05.190" level="INFO">Executing JavaScript:
+window.open('')
+Without any arguments.</msg>
+<status status="PASS" starttime="20210831 13:04:05.190" endtime="20210831 13:04:05.225"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>locator=NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20210831 13:04:05.226" endtime="20210831 13:04:05.236"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20210831 13:04:05.237" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<status status="PASS" starttime="20210831 13:04:05.237" endtime="20210831 13:04:05.296"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20210831 13:04:05.296" endtime="20210831 13:04:05.298"/>
+</kw>
+<kw name="LoginKW">
+<arg>${LOGINDATA}[username]</arg>
+<arg>${LOGINDATA}[password]</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=user-name</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210831 13:04:05.300" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<status status="PASS" starttime="20210831 13:04:05.299" endtime="20210831 13:04:05.427"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${Password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20210831 13:04:05.428" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg timestamp="20210831 13:04:05.481" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20210831 13:04:05.551" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20210831 13:04:05.427" endtime="20210831 13:04:05.551"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210831 13:04:05.551" level="INFO">Clicking button 'id=login-button'.</msg>
+<status status="PASS" starttime="20210831 13:04:05.551" endtime="20210831 13:04:05.686"/>
+</kw>
+<status status="PASS" starttime="20210831 13:04:05.298" endtime="20210831 13:04:05.686"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210831 13:04:10.688" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210831 13:04:05.687" endtime="20210831 13:04:10.688"/>
+</kw>
+<tag>sanity</tag>
+<status status="PASS" starttime="20210831 13:04:05.189" endtime="20210831 13:04:10.689"/>
+</test>
+<test id="s1-t3" name="AddItemToCartAndCheckCartAfterwards">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open('')</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210831 13:04:10.692" level="INFO">Executing JavaScript:
+window.open('')
+Without any arguments.</msg>
+<status status="PASS" starttime="20210831 13:04:10.691" endtime="20210831 13:04:10.722"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>locator=NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20210831 13:04:10.722" endtime="20210831 13:04:10.730"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20210831 13:04:10.731" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<status status="PASS" starttime="20210831 13:04:10.730" endtime="20210831 13:04:10.765"/>
+</kw>
+<kw name="LoginKW">
+<arg>${LOGINDATA}[username]</arg>
+<arg>${LOGINDATA}[password]</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=user-name</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210831 13:04:10.767" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<status status="PASS" starttime="20210831 13:04:10.767" endtime="20210831 13:04:10.839"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${Password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20210831 13:04:10.840" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg timestamp="20210831 13:04:10.871" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20210831 13:04:10.912" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20210831 13:04:10.839" endtime="20210831 13:04:10.912"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210831 13:04:10.913" level="INFO">Clicking button 'id=login-button'.</msg>
+<status status="PASS" starttime="20210831 13:04:10.912" endtime="20210831 13:04:10.969"/>
+</kw>
+<status status="PASS" starttime="20210831 13:04:10.766" endtime="20210831 13:04:10.969"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210831 13:04:15.970" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210831 13:04:10.970" endtime="20210831 13:04:15.970"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=add-to-cart-sauce-labs-backpack</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210831 13:04:15.971" level="INFO">Clicking button 'id=add-to-cart-sauce-labs-backpack'.</msg>
+<status status="PASS" starttime="20210831 13:04:15.971" endtime="20210831 13:04:16.035"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210831 13:04:21.036" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210831 13:04:16.036" endtime="20210831 13:04:21.036"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>class=shopping_cart_link</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210831 13:04:21.037" level="INFO">Clicking element 'class=shopping_cart_link'.</msg>
+<status status="PASS" starttime="20210831 13:04:21.037" endtime="20210831 13:04:21.093"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210831 13:04:26.095" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210831 13:04:21.093" endtime="20210831 13:04:26.095"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>@{CartITems}</var>
+<arg>class=cart_item</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20210831 13:04:26.107" level="INFO">@{CartITems} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="c85e8c5e15e5623f3a89a71819eb4b0c", element="031671bb-3d2b-4447-9385-4061e767442a")&gt; ]</msg>
+<status status="PASS" starttime="20210831 13:04:26.095" endtime="20210831 13:04:26.107"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${CartITems}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20210831 13:04:26.108" level="INFO">Length is 1</msg>
+<status status="PASS" starttime="20210831 13:04:26.108" endtime="20210831 13:04:26.108"/>
+</kw>
+<tag>sanity</tag>
+<status status="PASS" starttime="20210831 13:04:10.690" endtime="20210831 13:04:26.109"/>
+</test>
+<test id="s1-t4" name="RemoveItemFromCartAndCheckCartAfterwards">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open('')</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210831 13:04:26.111" level="INFO">Executing JavaScript:
+window.open('')
+Without any arguments.</msg>
+<status status="PASS" starttime="20210831 13:04:26.111" endtime="20210831 13:04:26.160"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>locator=NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20210831 13:04:26.160" endtime="20210831 13:04:26.180"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20210831 13:04:26.182" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<status status="PASS" starttime="20210831 13:04:26.181" endtime="20210831 13:04:26.256"/>
+</kw>
+<kw name="LoginKW">
+<arg>${LOGINDATA}[username]</arg>
+<arg>${LOGINDATA}[password]</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=user-name</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210831 13:04:26.259" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<status status="PASS" starttime="20210831 13:04:26.258" endtime="20210831 13:04:26.384"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${Password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20210831 13:04:26.385" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg timestamp="20210831 13:04:26.440" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20210831 13:04:26.506" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20210831 13:04:26.384" endtime="20210831 13:04:26.507"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210831 13:04:26.507" level="INFO">Clicking button 'id=login-button'.</msg>
+<status status="PASS" starttime="20210831 13:04:26.507" endtime="20210831 13:04:26.593"/>
+</kw>
+<status status="PASS" starttime="20210831 13:04:26.257" endtime="20210831 13:04:26.593"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210831 13:04:31.595" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210831 13:04:26.593" endtime="20210831 13:04:31.595"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>class=shopping_cart_link</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210831 13:04:31.596" level="INFO">Clicking element 'class=shopping_cart_link'.</msg>
+<status status="PASS" starttime="20210831 13:04:31.596" endtime="20210831 13:04:31.641"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210831 13:04:36.643" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210831 13:04:31.642" endtime="20210831 13:04:36.643"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=remove-sauce-labs-backpack</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210831 13:04:36.644" level="INFO">Clicking button 'id=remove-sauce-labs-backpack'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210831 13:05:00.708" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=92.0.4515.159)
+</msg>
+<status status="FAIL" starttime="20210831 13:04:48.679" endtime="20210831 13:05:00.708"/>
+</kw>
+<msg timestamp="20210831 13:05:00.708" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=92.0.4515.159)
+</msg>
+<msg timestamp="20210831 13:05:00.718" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=92.0.4515.159)
+</msg>
+<status status="FAIL" starttime="20210831 13:04:36.643" endtime="20210831 13:05:00.718"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20210831 13:05:00.719" endtime="20210831 13:05:00.719"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>@{CartITems}</var>
+<arg>class=cart_item</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="NOT RUN" starttime="20210831 13:05:00.720" endtime="20210831 13:05:00.720"/>
+</kw>
+<kw name="Should Be Empty" library="BuiltIn">
+<arg>${CartITems}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="NOT RUN" starttime="20210831 13:05:00.721" endtime="20210831 13:05:00.721"/>
+</kw>
+<tag>sanity</tag>
+<status status="FAIL" starttime="20210831 13:04:26.110" endtime="20210831 13:05:00.721">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=92.0.4515.159)
+</status>
+</test>
+<status status="FAIL" starttime="20210831 13:03:52.396" endtime="20210831 13:05:00.725"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="3" fail="1" skip="0">sanity</stat>
+</tag>
+<suite>
+<stat pass="3" fail="1" skip="0" id="s1" name="TestSuite1">TestSuite1</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210831 13:05:00.708" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=92.0.4515.159)
+</msg>
+</errors>
+</robot>

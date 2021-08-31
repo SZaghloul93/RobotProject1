@@ -8,7 +8,7 @@ ${URL}    https://www.saucedemo.com/
 @{CREDENTIALS}    standard_user    secret_sauce
 &{LOGINDATA}    username=standard_user    password=secret_sauce
 &{INVALIDLOGINDATA}    username=invalid_user    password=secret_sauce
-${PATH}    C:/Users/saif_zaghloul/Downloads/chromedriver_win32/chromedriver.exe
+${PATH}    ../Driver/chromedriver.exe
 
 *** Test Cases ***
 OpenWebSiteWithInvalidCredentials
