@@ -5,6 +5,14 @@ Library           String
 
 Default Tags    sanity   
 
+*** Keywords ***
+LoginKW
+    [Arguments]  ${Username}  ${Password}
+    Input Text        id=user-name    ${Username}
+    Input Password    id=password    ${Password}
+    Click Button      id=login-button 
+
+
 *** Variables ***
 ${URL}    https://www.saucedemo.com/
 @{CREDENTIALS}    standard_user    secret_sauce
@@ -19,7 +27,7 @@ OpenWebSiteWithInvalidCredentials
     LoginKW  ${INVALIDLOGINDATA}[username]  ${INVALIDLOGINDATA}[password]
     Sleep    5
     Element Should Be Visible  class=error-button
-    Pause Execution    Press OK
+    Pause Execution    Hi There please Press Ok
 
 OpenWebSiteWithValidCredentials
     Execute Javascript    window.open('')
@@ -65,19 +73,6 @@ RemoveItemFromCartAndCheckCartAfterwards
     Pause Execution    Press OK
     @{CartITems}  Get WebElements  class=cart_item
     Should Be Empty    ${CartITems}
-
-
-
-
-
- 
- 
-*** Keywords ***
-LoginKW
-    [Arguments]  ${Username}  ${Password}
-    Input Text        id=user-name    ${Username}
-    Input Password    id=password    ${Password}
-    Click Button      id=login-button 
     
     
  
