@@ -1,7 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library         Dialogs
-Library           String
 
 Default Tags    sanity   
 
@@ -15,14 +14,15 @@ LoginKW
 
 *** Variables ***
 ${URL}    https://www.saucedemo.com/
-@{CREDENTIALS}    standard_user    secret_sauce
-&{LOGINDATA}    username=standard_user    password=secret_sauce
+# @{CREDENTIALS}    standard_user    secret_sauce
+&{VALIDLOGINDATA}    username=standard_user    password=secret_sauce
 &{INVALIDLOGINDATA}    username=invalid_user    password=secret_sauce
-${PATH}    ../Driver/chromedriver.exe
+${PATH1}    ./Driver/chromedriver.exe
+${PATH2}    ./Driver/msedgedriver.exe
 
 *** Test Cases ***
 OpenWebSiteWithInvalidCredentials
-    Open Browser    ${URL}    chrome    executable_path=${PATH}  options=add_argument("--incognito")
+    Open Browser    ${URL}    edge    executable_path=${PATH2}  options=add_argument("--incognito")
     Set Browser Implicit Wait    5
     LoginKW  ${INVALIDLOGINDATA}[username]  ${INVALIDLOGINDATA}[password]
     Sleep    5
